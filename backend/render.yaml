@@ -6,9 +6,7 @@ services:
     name: ai-vision-pro-api
     runtime: python
     plan: starter  # Upgrade to 'pro' for production
-    buildCommand: |
-      pip install -r backend/requirements_render.txt
-      python -c "import sys; sys.path.insert(0, '.'); from shared_model import get_classifier; c = get_classifier(); c.load_model()"
+    buildCommand: pip install -r backend/requirements_render.txt
     startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
