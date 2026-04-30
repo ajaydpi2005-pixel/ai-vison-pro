@@ -13,7 +13,20 @@ pydantic>=2.0.0
 # AI/ML (CPU-Only, Lighter)
 # ============================================
 torch==2.1.0+cpu
---index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart
+pillow
+numpy
+requests
+transformers
+torch
+torchvision
+safetensors
+pydantic
+python-dotenv
 torchvision==0.16.0+cpu
 transformers>=4.35.0
 pillow>=10.1.0
