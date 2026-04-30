@@ -14,10 +14,10 @@ pydantic>=2.0.0
 
 # ============================================
 # AI/ML (CPU-Only, Lighter)
-# Note: Using torch 2.2.0+cpu which is compatible with Python 3.14 on Render
+# Using torch 2.10.0+cpu - available for Python 3.14 on Render
 # ============================================
-torch==2.2.0+cpu
-torchvision==0.17.0+cpu
+torch==2.10.0+cpu
+torchvision==0.15.1+cpu
 transformers>=4.35.0
 pillow>=10.1.0
 numpy>=1.26.0
