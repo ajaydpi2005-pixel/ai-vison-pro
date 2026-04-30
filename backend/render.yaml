@@ -1,0 +1,34 @@
+# Render.com Deployment Configuration
+# This file configures the backend for deployment on Render
+
+services:
+  - type: web
+    name: ai-vision-pro-api
+    runtime: python
+    plan: starter  # Upgrade to 'pro' for production
+    buildCommand: |
+      pip install -r backend/requirements_render.txt
+      python -c "import sys; sys.path.insert(0, '.'); from shared_model import get_classifier; c = get_classifier(); c.load_model()"
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true
+    # Optional: Add a disk for model caching (not needed as models auto-download)
+    # disk:
+    #   name: model-cache
+    #   mountPath: /opt/render/.cache
+    #   sizeGB: 2
