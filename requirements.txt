@@ -1,0 +1,29 @@
+# AI Vision Pro - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core ML & Image Processing
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+pillow>=9.5.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Backend API
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+
+# Web App
+streamlit>=1.25.0
+
+# Desktop App (tkinter is built-in, no extra deps needed)
+
+# Additional utilities
+pydantic>=2.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Development (optional)
+pytest>=7.4.0
+black>=23.0.0
