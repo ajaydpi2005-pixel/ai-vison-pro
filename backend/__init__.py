@@ -1,2 +1,2 @@
-# AI Vision Pro - Backend Package
-# This file makes the backend folder a Python package
+# AI Vision Pro - Root Package
+# Makes the root folder a Python package for Render deployment
